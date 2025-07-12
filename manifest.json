@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "CodeSensei",
+  "version": "1.0",
+  "description": "A Chrome extension to master LeetCode with logic validation, dry-run, hints, and problem recommendations.",
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "storage",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://api.gemini.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
