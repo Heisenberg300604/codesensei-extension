@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSensei Extension Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 CodeSensei Extension Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Extension Status</h2>
+        <div id="extensionStatus" class="status">Checking extension status...</div>
+        <button onclick="checkExtensionStatus()">Check Status</button>
+    </div>
+
+    <div class="test-section">
+        <h2>API Key Test</h2>
+        <div id="apiKeyStatus" class="status">No API key configured</div>
+        <button onclick="testApiKey()">Test API Key</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Storage Test</h2>
+        <div id="storageStatus" class="status">Checking storage...</div>
+        <button onclick="testStorage()">Test Storage</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Debug Information</h2>
+        <pre id="debugInfo">Click "Check Status" to see debug information</pre>
+    </div>
+
+    <script>
+        async function checkExtensionStatus() {
+            const statusDiv = document.getElementById('extensionStatus');
+            const debugDiv = document.getElementById('debugInfo');
+            
+            try {
+                // Check if extension is installed
+                const extensionId = await getExtensionId();
+                
+                if (extensionId) {
+                    statusDiv.className = 'status success';
+                    statusDiv.textContent = '✅ Extension is installed and accessible';
+                    
+                    // Get extension info
+                    const extensionInfo = await chrome.management.get(extensionId);
+                    debugDiv.textContent = JSON.stringify(extensionInfo, null, 2);
+                } else {
+                    statusDiv.className = 'status error';
+                    statusDiv.textContent = '❌ Extension not found or not accessible';
+                }
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.textContent = '❌ Error checking extension: ' + error.message;
+                debugDiv.textContent = error.stack;
+            }
+        }
+
+        async function getExtensionId() {
+            try {
+                // Try to access extension storage
+                await chrome.storage.sync.get(['geminiApiKey']);
+                return 'Extension accessible';
+            } catch (error) {
+                return null;
+            }
+        }
+
+        async function testApiKey() {
+            const statusDiv = document.getElementById('apiKeyStatus');
+            
+            try {
+                const result = await chrome.storage.sync.get(['geminiApiKey']);
+                
+                if (result.geminiApiKey) {
+                    statusDiv.className = 'status success';
+                    statusDiv.textContent = '✅ API key is configured';
+                } else {
+                    statusDiv.className = 'status warning';
+                    statusDiv.textContent = '⚠️ No API key found. Please configure in extension popup.';
+                }
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.textContent = '❌ Error checking API key: ' + error.message;
+            }
+        }
+
+        async function testStorage() {
+            const statusDiv = document.getElementById('storageStatus');
+            
+            try {
+                // Test local storage
+                const testData = { test: 'value', timestamp: Date.now() };
+                await chrome.storage.local.set(testData);
+                
+                const retrieved = await chrome.storage.local.get(['test']);
+                
+                if (retrieved.test === testData.test) {
+                    statusDiv.className = 'status success';
+                    statusDiv.textContent = '✅ Storage is working correctly';
+                } else {
+                    statusDiv.className = 'status error';
+                    statusDiv.textContent = '❌ Storage test failed';
+                }
+                
+                // Clean up test data
+                await chrome.storage.local.remove(['test']);
+                
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.textContent = '❌ Storage error: ' + error.message;
+            }
+        }
+
+        async function clearStorage() {
+            try {
+                await chrome.storage.local.clear();
+                await chrome.storage.sync.clear();
+                
+                const statusDiv = document.getElementById('storageStatus');
+                statusDiv.className = 'status success';
+                statusDiv.textContent = '✅ Storage cleared successfully';
+            } catch (error) {
+                const statusDiv = document.getElementById('storageStatus');
+                statusDiv.className = 'status error';
+                statusDiv.textContent = '❌ Error clearing storage: ' + error.message;
+            }
+        }
+
+        // Auto-check on page load
+        window.addEventListener('load', () => {
+            checkExtensionStatus();
+            testApiKey();
+            testStorage();
+        });
+    </script>
+</body>
+</html> 
