@@ -1,17 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "CodeSensei",
-  "version": "1.0",
-  "description": "A Chrome extension to master LeetCode with logic validation, dry-run, hints, and problem recommendations.",
+  "name": "CodeSensei - LeetCode AI Mentor",
+  "version": "1.0.0",
+  "description": "Your AI-powered coding mentor for LeetCode practice. Get hints, validate logic, and master problems without copy-pasting.",
   "permissions": [
-    "activeTab",
-    "clipboardRead",
     "storage",
-    "identity"
+    "activeTab",
+    "scripting",
+    "alarms"
   ],
   "host_permissions": [
-    "https://api.gemini.google.com/*"
+    "https://leetcode.com/*",
+    "https://generativelanguage.googleapis.com/*"
   ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CodeSensei"
+  },
   "content_scripts": [
     {
       "matches": ["https://leetcode.com/problems/*"],
@@ -19,9 +24,6 @@
       "css": ["content.css"]
     }
   ],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "background": {
     "service_worker": "background.js"
   }
