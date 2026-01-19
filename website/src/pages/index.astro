@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navigation/Navbar.astro';
+import Footer from '../components/navigation/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import ProblemStatement from '../components/sections/ProblemStatement.astro';
+import SolutionOverview from '../components/sections/SolutionOverview.astro';
+import Features from '../components/sections/Features.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import Demo from '../components/sections/Demo';
+import GitHubStats from '../components/sections/GitHubStats.astro';
+import SocialProof from '../components/sections/SocialProof.astro';
+import TechDetails from '../components/sections/TechDetails.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout
+  title="CodeSensei - AI-Powered LeetCode Mentor | Chrome Extension"
+  description="Get smart hints, validate logic, and master LeetCode problems without spoilers. Free Chrome extension powered by Gemini AI."
+>
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <Navbar />
+  <main id="main-content">
+    <Hero />
+    <GitHubStats />
+    <ProblemStatement />
+    <SolutionOverview />
+    <Features />
+    <HowItWorks />
+    <Demo client:load />
+    <SocialProof />
+    <TechDetails />
+    <Pricing />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</Layout>

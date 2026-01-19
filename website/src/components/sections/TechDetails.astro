@@ -1,0 +1,136 @@
+---
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+        Built with Modern Tech
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed tracking-tight">
+        Transparent, secure, and built for developers who care about privacy.
+      </p>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- How It Works Diagram -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 tracking-tight">How It Works</h3>
+        <div class="space-y-6">
+          <div class="glass rounded-xl p-6">
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-primary-500/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold">Browser</div>
+                <div class="text-sm text-gray-400">Your code stays here</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex justify-center">
+            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+          
+          <div class="glass rounded-xl p-6">
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-accent-blue/20 flex items-center justify-center">
+                <span class="text-xl">🧠</span>
+              </div>
+              <div>
+                <div class="font-semibold">Extension</div>
+                <div class="text-sm text-gray-400">Extracts problem context</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex justify-center">
+            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+          
+          <div class="glass rounded-xl p-6">
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold">Gemini API</div>
+                <div class="text-sm text-gray-400">Only problem context sent</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-6 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+          <p class="text-sm text-emerald-300">
+            <strong>Privacy First:</strong> Your code stays in your browser. We only send problem context to Gemini.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Tech Stack & Privacy -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 tracking-tight">Tech Stack</h3>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <Badge variant="primary">Chrome Extension</Badge>
+          <Badge variant="info">Gemini AI</Badge>
+          <Badge variant="primary">JavaScript</Badge>
+          <Badge variant="success">Open Source</Badge>
+        </div>
+        
+        <Card class="mb-6">
+          <h4 class="font-semibold mb-4">Privacy Highlights</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-gray-300">No code storage - your code never leaves your browser</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-gray-300">No tracking - we don't collect analytics or personal data</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-gray-300">API calls from your key - you control usage and costs</span>
+            </li>
+          </ul>
+        </Card>
+        
+        <Card>
+          <h4 class="font-semibold mb-4">Open Source</h4>
+          <p class="text-gray-400 mb-4 text-sm">
+            CodeSensei is open source. Review the code, contribute, or fork it for your needs.
+          </p>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center space-x-2 text-primary-400 hover:text-primary-300 transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>Star on GitHub</span>
+          </a>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="section-padding bg-dark-surface/30" aria-labelledby="social-proof-heading">
+  <div class="container-custom">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 id="social-proof-heading" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+        Join the Community
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-4 leading-relaxed tracking-tight">
+        CodeSensei is open source and built for developers who want to learn smarter, not harder.
+      </p>
+    </div>
+    
+    <!-- GitHub CTA Card -->
+    <div class="max-w-4xl mx-auto mb-12 md:mb-16">
+      <Card class="p-6 sm:p-8 md:p-12 text-center">
+        <div class="flex justify-center mb-6">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-primary-600 flex items-center justify-center shadow-lg">
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-bold mb-4 tracking-tight">Star Us on GitHub</h3>
+        <p class="text-gray-300 mb-6 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed tracking-tight">
+          Help us grow! Star the repository to show your support and stay updated with new features and improvements.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="https://github.com/Heisenberg300604/codesensei-extension" variant="primary" size="lg" class="group">
+            <svg class="w-5 h-5 mr-2 inline-block" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            Star on GitHub
+            <svg class="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Button>
+          <Button href="https://github.com/Heisenberg300604/codesensei-extension" variant="secondary" size="lg">
+            Contribute
+          </Button>
+        </div>
+      </Card>
+    </div>
+    
+    <!-- Early Adopters Message -->
+    <div class="max-w-3xl mx-auto mb-12 md:mb-16">
+      <Card class="p-6 sm:p-8 border-2 border-emerald-500/30 bg-emerald-500/5">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0">
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 text-emerald-300">Perfect for Beginners</h3>
+            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+              Early users from India have found CodeSensei especially helpful for learning problem-solving patterns. 
+              Whether you're preparing for technical interviews or just starting your coding journey, CodeSensei guides 
+              you without giving away the answers.
+            </p>
+          </div>
+        </div>
+      </Card>
+    </div>
+    
+    <!-- Key Benefits Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <Card class="p-5 sm:p-6 text-center">
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-2">100%</div>
+        <div class="text-gray-400 text-sm sm:text-base">Open Source</div>
+      </Card>
+      <Card class="p-5 sm:p-6 text-center">
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-2">Free</div>
+        <div class="text-gray-400 text-sm sm:text-base">To Use</div>
+      </Card>
+      <Card class="p-5 sm:p-6 text-center">
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-2">Privacy</div>
+        <div class="text-gray-400 text-sm sm:text-base">First</div>
+      </Card>
+      <Card class="p-5 sm:p-6 text-center">
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-2">Active</div>
+        <div class="text-gray-400 text-sm sm:text-base">Development</div>
+      </Card>
+    </div>
+  </div>
+</section>

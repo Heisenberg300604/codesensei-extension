@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`absolute inset-0 bg-gradient-mesh animate-gradient opacity-50 ${className}`}></div>

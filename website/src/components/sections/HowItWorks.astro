@@ -1,0 +1,126 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section id="how-it-works" class="section-padding bg-dark-surface/30" aria-labelledby="how-it-works-heading">
+  <div class="container-custom px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 id="how-it-works-heading" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+        Get Started in Under 2 Minutes
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed tracking-tight">
+        Setting up CodeSensei is quick and easy. No complicated configuration needed.
+      </p>
+    </div>
+    
+    <div class="relative">
+      <!-- Timeline Line -->
+      <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 via-accent-blue to-primary-500 transform -translate-x-1/2"></div>
+      
+      <div class="space-y-12 lg:space-y-24">
+        <!-- Step 1 -->
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div class="lg:pr-12 text-center lg:text-right">
+            <div class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary-600 text-white text-xl sm:text-2xl font-bold mb-4 lg:float-right shadow-lg">
+              1
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 tracking-tight">Install Extension</h3>
+            <p class="text-gray-400 leading-relaxed text-sm sm:text-base tracking-tight">
+              Clone the repository and load it as an unpacked extension in Chrome. Quick setup, no store needed.
+            </p>
+          </div>
+          <div class="glass rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div class="bg-dark-bg rounded-lg p-4 sm:p-6 border border-white/10">
+              <div class="flex items-center space-x-3 sm:space-x-4 mb-4">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-600 flex items-center justify-center">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm sm:text-base">CodeSensei</div>
+                  <div class="text-xs sm:text-sm text-gray-400">GitHub Repository</div>
+                </div>
+              </div>
+              <div class="text-xs sm:text-sm text-gray-300">
+                Clone and load as unpacked extension in Chrome.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div class="lg:order-2 lg:pl-12 text-center lg:text-left">
+            <div class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary-600 text-white text-xl sm:text-2xl font-bold mb-4 shadow-lg">
+              2
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 tracking-tight">Add Gemini API Key</h3>
+            <p class="text-gray-400 leading-relaxed text-sm sm:text-base tracking-tight">
+              Get your free API key from Google AI Studio. The first 50 requests per day are free, then pay-as-you-go.
+            </p>
+            <a href="https://makersuite.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-primary-400 hover:text-primary-300 mt-4 inline-block text-sm sm:text-base">
+              Get your free API key →
+            </a>
+          </div>
+          <div class="lg:order-1 glass rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div class="bg-dark-bg rounded-lg p-4 sm:p-6 border border-white/10">
+              <div class="space-y-3 sm:space-y-4">
+                <div>
+                  <label class="text-xs sm:text-sm text-gray-400 mb-2 block">Gemini API Key</label>
+                  <div class="bg-dark-surface rounded-lg px-3 sm:px-4 py-2 sm:py-3 border border-white/10 font-mono text-xs sm:text-sm">
+                    AIza...
+                  </div>
+                </div>
+                <button class="w-full btn-primary text-sm sm:text-base">Save API Key</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div class="lg:pr-12 text-center lg:text-right">
+            <div class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary-600 text-white text-xl sm:text-2xl font-bold mb-4 lg:float-right shadow-lg">
+              3
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 tracking-tight">Start Solving Smarter</h3>
+            <p class="text-gray-400 leading-relaxed text-sm sm:text-base tracking-tight">
+              Navigate to any LeetCode problem. The CodeSensei widget appears automatically, ready to help you learn.
+            </p>
+          </div>
+          <div class="glass rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div class="bg-dark-bg rounded-lg p-4 sm:p-6 border border-white/10">
+              <div class="space-y-3 sm:space-y-4">
+                <div class="text-xs sm:text-sm text-gray-400 truncate">leetcode.com/problems/two-sum</div>
+                <div class="h-24 sm:h-32 bg-dark-surface rounded-lg border border-white/10 flex items-center justify-center">
+                  <div class="text-center">
+                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-primary-300 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    <span class="text-xs sm:text-sm text-gray-400">CodeSensei Widget</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="text-center mt-12 md:mt-16">
+      <div class="inline-flex items-center space-x-2 text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Setup time: &lt; 2 minutes</span>
+      </div>
+      <div>
+        <Button href="https://github.com/Heisenberg300604/codesensei-extension" variant="primary" size="lg" class="text-base sm:text-lg">
+          Get Started on GitHub
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

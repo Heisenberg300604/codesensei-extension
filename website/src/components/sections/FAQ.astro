@@ -1,0 +1,170 @@
+---
+const faqs = [
+  {
+    question: "Is my code sent to any server?",
+    answer: "No! Your code never leaves your browser. CodeSensei only sends the LeetCode problem statement and your question to the Gemini API. Your actual code stays completely private on your device.",
+  },
+  {
+    question: "Will this make me worse at coding?",
+    answer: "Quite the opposite! CodeSensei is designed to teach, not to enable shortcuts. The anti-copy-paste protection and smart hints guide you toward understanding patterns and problem-solving strategies. You'll learn to think like a senior developer, not just memorize solutions.",
+  },
+  {
+    question: "How much does it cost?",
+    answer: "The extension is completely free. You only pay for Gemini API usage, which starts with 50 free requests per day. After that, it's approximately $0.001 per API call. Most users spend less than $2-5 per month even with heavy usage.",
+  },
+  {
+    question: "Is it allowed on LeetCode?",
+    answer: "CodeSensei doesn't interfere with LeetCode's systems or violate their terms of service. It's a browser extension that provides learning assistance, similar to having a tutor beside you. However, we recommend checking LeetCode's current policies for competitive programming contexts.",
+  },
+  {
+    question: "Can I use it for interviews?",
+    answer: "We don't recommend using CodeSensei during actual technical interviews, as most companies expect you to solve problems independently. However, it's perfect for interview preparation and practice sessions.",
+  },
+  {
+    question: "How do I get a Gemini API key?",
+    answer: "Getting a Gemini API key is free and takes less than 2 minutes. Visit Google AI Studio (makersuite.google.com/app/apikey), sign in with your Google account, and generate a new API key. Copy it into CodeSensei's settings, and you're ready to go!",
+  },
+  {
+    question: "Is it open source?",
+    answer: "Yes! CodeSensei is completely open source. You can view the code, contribute improvements, or fork it for your own needs. Check out our GitHub repository for the full source code.",
+  },
+  {
+    question: "What if I don't like the hints?",
+    answer: "You can always ask for more specific hints or try a different approach. CodeSensei learns from your questions and provides increasingly targeted guidance. If you're still stuck, you can use the 'Validate Logic' feature to check if your approach is on the right track.",
+  },
+];
+---
+
+<section id="faq" class="section-padding" aria-labelledby="faq-heading">
+  <div class="container-custom">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 id="faq-heading" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-4 leading-relaxed tracking-tight">
+        Everything you need to know about CodeSensei.
+      </p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto space-y-3 sm:space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="glass rounded-xl overflow-hidden transition-all duration-300 hover:border-primary-500/30" data-faq-item>
+          <button
+            class="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-white/5 transition-all duration-200 group"
+            data-faq-index={index}
+            aria-expanded="false"
+            aria-controls={`faq-answer-${index}`}
+            id={`faq-question-${index}`}
+          >
+            <span class="font-semibold text-base sm:text-lg pr-4 group-hover:text-white transition-colors tracking-tight">{faq.question}</span>
+            <svg
+              class="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 flex-shrink-0 transition-all duration-300 group-hover:text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              data-icon
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="px-4 sm:px-6 pb-0 text-gray-300 leading-relaxed text-sm sm:text-base overflow-hidden transition-all duration-300 ease-out"
+            data-answer
+            id={`faq-answer-${index}`}
+            role="region"
+            aria-labelledby={`faq-question-${index}`}
+            style="max-height: 0; opacity: 0;"
+          >
+            <div class="pb-4 sm:pb-5 pt-0">
+              {faq.answer}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-faq-index]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('[data-icon]');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const faqItem = button.closest('[data-faq-item]');
+      
+      // Close all other FAQs with smooth animation
+      document.querySelectorAll('[data-faq-index]').forEach((otherButton) => {
+        if (otherButton !== button) {
+          const otherAnswer = otherButton.nextElementSibling;
+          const otherIcon = otherButton.querySelector('[data-icon]');
+          const otherFaqItem = otherButton.closest('[data-faq-item]');
+          
+          if (otherAnswer && otherButton.getAttribute('aria-expanded') === 'true') {
+            otherButton.setAttribute('aria-expanded', 'false');
+            otherAnswer.style.maxHeight = '0';
+            otherAnswer.style.opacity = '0';
+            otherAnswer.style.paddingTop = '0';
+            if (otherIcon) {
+              otherIcon.style.transform = 'rotate(0deg)';
+            }
+            if (otherFaqItem) {
+              otherFaqItem.classList.remove('border-primary-500/50');
+            }
+          }
+        }
+      });
+      
+      // Toggle current FAQ with smooth animation
+      if (isExpanded) {
+        // Close
+        button.setAttribute('aria-expanded', 'false');
+        if (answer) {
+          answer.style.maxHeight = '0';
+          answer.style.opacity = '0';
+          answer.style.paddingTop = '0';
+        }
+        if (icon) {
+          icon.style.transform = 'rotate(0deg)';
+        }
+        if (faqItem) {
+          faqItem.classList.remove('border-primary-500/50');
+        }
+      } else {
+        // Open
+        button.setAttribute('aria-expanded', 'true');
+        if (answer) {
+          const answerContent = answer.querySelector('div');
+          const height = answerContent ? answerContent.scrollHeight : 200;
+          answer.style.maxHeight = height + 'px';
+          answer.style.opacity = '1';
+          answer.style.paddingTop = '0.5rem';
+        }
+        if (icon) {
+          icon.style.transform = 'rotate(180deg)';
+        }
+        if (faqItem) {
+          faqItem.classList.add('border-primary-500/50');
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  [data-answer] {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease-out,
+                padding-top 0.3s ease-out;
+  }
+  
+  [data-icon] {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.2s ease-out;
+  }
+  
+  [data-faq-item] {
+    transition: border-color 0.3s ease-out;
+  }
+</style>
