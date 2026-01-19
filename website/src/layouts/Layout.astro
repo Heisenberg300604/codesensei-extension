@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -60,11 +61,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Analytics - Plausible (Privacy-first) -->
     <script defer data-domain="codesensei.dev" src="https://plausible.io/js/script.js"></script>
-    <!-- Vercel Analytics -->
-    <script is:inline>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
+    <!-- Vercel Web Analytics -->
+    <Analytics />
     <!-- Alternative: Google Analytics (uncomment if preferred) -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
